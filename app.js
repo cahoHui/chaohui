@@ -4,7 +4,7 @@
 */
 var testProject = angular.module('huiproject',['ui.router']);
 
-testProject.run(['$rootScope', '$state', '$stateParams', '$templateCache', '$location', '$http', function($rootScope, $state, $templateCache, $location, $http){
+testProject.run(['$rootScope', '$state', '$stateParams', '$templateCache', '$location', '$http', function($rootScope, $state, $stateParams, $templateCache, $location, $http){
 	$rootScope.$state = $state;
 	$rootScope.$stateParams = $stateParams;
 }])
