@@ -3,7 +3,7 @@
 * author: zhangchaohui
 
 */
-testproject.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+testProject.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 	$stateProvider
 		//js瀑布流
 		.state('/waterfall', {
