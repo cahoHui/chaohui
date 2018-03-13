@@ -8,7 +8,7 @@ testProject.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 		//js瀑布流
 		.state('/waterfall', {
 			url: '/waterfall',
-			templateUrl: '../tpls/waterfall.html',
+			templateUrl: 'tpls/waterfall.html',
 			controller: waterfallController
 		})
 }])
