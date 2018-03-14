@@ -1,10 +1,11 @@
-/*app.js
-	data: 2017/8/22
-	author: zhangchaohui
+/*
+*	data: 2017/08/22
+*	author: zhangchaohui
 */
-var testProject = angular.module('huiproject',['ui.router']);
+var testproject = angular.module('huiproject',['ui.router']);
 
-testProject.run(['$rootScope', '$state', '$stateParams', '$templateCache', '$location', '$http', function($rootScope, $state, $stateParams, $templateCache, $location, $http){
+testproject.run(['$rootScope', '$state', '$stateParams','$templateCache', '$location', '$http', function($rootScope, $state, $stateParams, $templateCache, $location, $http){
 	$rootScope.$state = $state;
 	$rootScope.$stateParams = $stateParams;
-}])
+
+}]);

@@ -3,12 +3,12 @@
 * author: zhangchaohui
 
 */
-testProject.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+testproject.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider){
 	$stateProvider
 		//js瀑布流
 		.state('/waterfall', {
 			url: '/waterfall',
 			templateUrl: 'tpls/waterfall.html',
-			controller: waterfallController
+			controller: 'waterfallController'
 		})
-}])
+}]);
