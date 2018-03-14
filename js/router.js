@@ -6,9 +6,14 @@
 testproject.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider){
 	$stateProvider
 		//js瀑布流
-		.state('/waterfall', {
+		.state('waterfall', {
 			url: '/waterfall',
 			templateUrl: 'tpls/waterfall.html',
 			controller: 'waterfallController'
+		})
+		.state('tubiao', {
+			url: '/tubiao',
+			templateUrl: 'tpls/tubiao.html',
+			controller: 'tubiaoController'
 		})
 }]);
