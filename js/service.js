@@ -11,49 +11,48 @@ testproject.factory('testProHttpService',[function(){
 }]);
 testproject.factory('testProService', [function(){
 	var service = {};
-	service.getExamDatas = function(selector,titleText,xAxisData,seriesData,names,datas){
-        selector.highcharts({
+	service.getExamDatas = function(seclecter,titles,xAxisDate,seriesArr,seriesDateName,seriesDateTime){
+		
+        seclecter.highcharts({
             chart: {
-                plotBackgroundColor: {//绘图区域背景色渐变
-                    linearGradient: [0, 0, 0, 500],
+                plotBackgroundColor: {
+                    linearGradient: [0,0,0,500],
                     stops: [
-                        [0, '#fff'],
-                        [1, '#F7FBFF']
+                        [0,'#fff'],
+                        [1,'#F7FBFF']
                     ]
                 },
                 type: 'line'
             },
             title: {
-                text: titleText,
+                text: titles,
+                y: 20, //center
+                x:20,
                 style:{
-                    fontSize:'24px',
+                    fontSize:'22px',
                     fontFamily:'MicrosoftYaHei',
                     color:'#e0e0e0'
                 }
-            },
+            }, 
             xAxis: {
-                tickLength: 0,//刻度线
+                categories: xAxisDate,
+                tickWidth: 0,//刻度线的宽度设置为0不显示
                 lineColor:'#E4EAF0',
-                gridLineDashStyle:'Dash',
-                gridLineWidth:'1',
-                gridLineColor:'#E4EAF0',
-                title: {
-                    text: '',
-                    align:'high'
-                },
+                gridLineDashStyle: 'Dash',
+                gridLineWidth: '1',
+                gridLineColor: '#E4EAF0',
                 labels: {
                     useHTML: true,
                     formatter: function (){
                         return '<span class="fontFamily">'+this.value+'</span>';
                     }
-                },
-                categories: xAxisData
+                }
             },
             yAxis: {
-                max: 100,
                 min:0,
-                gridLineWidth:'0',
-                tickInterval: 20,//设置Y轴的间隔刻度值
+                max:100,
+                tickPixelInterval: 50 ,//设置Y轴的间隔刻度值
+                gridLineWidth: '0',
                 title: {
                     text: ''
                 },
@@ -62,30 +61,50 @@ testproject.factory('testProService', [function(){
                     formatter: function (){
                         return '<span class="fontFamily">'+this.value+'%</span>';
                     }
+                }, 
+            },
+            navigation: {//取消右上角按钮
+                    buttonOptions: {
+                        enabled: false
+                    }
+                },
+            tooltip: {
+                useHTML:true,
+                borderColor:'#ececec',
+                backgroundColor:"#fff",
+                borderRadius:20,
+                style:{
+                    "width":"200px"
+                },
+                formatter: function() {
+                    console.log(this)
+                    return '<div class="fontFamily" style="z-index:1010;"><div style="text-align:center;font-size:20px;color:#999; margin-bottom:10px;">'+Math.floor(this.y)+'%</div><div style="font-size:14px;color:d0d0d0;">'+seriesDateName[this.point.index]+'</div><div style="font-size:12px;color:d0d0d0;"><span style="padding-top:10px;">'+ seriesDateTime[this.point.index]+ '</span><div></div>';
                 }
             },
             legend: {
-                itemStyle:{
-                    color:'#999'
+                itemStyle: {
+                    color: '#999'
                 },
                 align: 'center',
                 verticalAlign: 'bottom',
-                itemWidth:130,//设置每个图例项的宽度
-                symbolPadding:10,//图标和文本之间的距离
-                symbolWidth: 10//设置是否显示横线
+                // borderWidth: 0
+                iewmWidth : 130, //设置每个图列项的宽度
+                symbolPadding: 10, // 图表和文本之间的距离
+                symbolWidth: 10 // 设置是否显示横线
+          
             },
             plotOptions: {
                 line: {
                     dataLabels: {
                         enabled: true,
-                        style:{
-                            "textShadow":"5"
+                        style: {
+                            "textShadow": '5'
                         }
                     }
+                    
                 }
             },
-            colors:['#22D6A5','#FEB70B'],
-            series: seriesData
+            series: seriesArr
         })
     };
     return service;

@@ -2,11 +2,14 @@
 *	data: 2017/08/22
 *	autoer: zhangchaohui
 */
-testproject.directive('waterfallDirective', [function(){
+testproject.directive('waterfallDirective', ['$timeout', function($timeout){
 	return {
 		link: function(scope, ele, attrs){
 			console.log(scope);
-			imglocation('container' ,'box');
+			$timeout(function(){
+				imglocation('container' ,'box');
+			});
+			// imglocation('container' ,'box');
 		    var imgData = {'data': [{'src':'2.jpg'},{'src':'1.jpg'},{'src':'3.jpg'},{'src':'5.jpg'},{'src':'4.jpg'}]};
 		    window.onscroll = function(){
 		        if(checkFlag()){
