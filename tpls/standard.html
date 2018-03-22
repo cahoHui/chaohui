@@ -1,0 +1,54 @@
+
+	<div class="top-banner">
+		<div class="container">
+			<h1>前端开发规范</h1>
+			<p>规范是一种约定、一种态度。良好的态度是你今后的财富...</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="con-box">
+				<h2 class="page-header">什么是规范？</h2>
+				<p>规范是一种约定，是一种态度。在前端开发中，尤其是在有团队参入合作的项目中，规范显的尤为重要。好的规范不仅可以提高工作效率，而且对未来代码的可读性，可扩展性，可维护性具有重大意义。</p>
+			</div>
+			<div class="con-box">
+				<h2 class="page-header">css命名规范</h2>
+				<p>一、class名以当前开发模块英文名称为前缀</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">//如果当前开发的是班级模块</p>
+						<p>.class-css{}</p>
+						<p class="title">//如果当前开发的是班级模块下的用书管理，用-连接子级模块相符的意思名称</p>
+						<p>.class-book{}</p>
+					</code></pre>
+				</div>
+				<p>二、class名之间用 “-” 中划线连接</p>
+				<div class="code-box">
+					<pre><code>
+						<p>.class-book-icon{}</p>
+					</code></pre>
+				</div>
+				<p>三、公共模块区域统一用 "单词-作用域" 方式命名</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">//比如项目名是book</p>
+						<p>&lt;div class="<span class="s">book-artical</span>"></p>
+						<p>　　&lt;strong class="<span class="s">book-article-hd</span>">标题&lt;/strong></p>
+						<p>　　&lt;ul class="<span class="s">book-article-bd</span>"></p>
+						<p>　　　　&lt;li>内容...&lt;/li></p>
+						<p>　　&lt;/ul></p>
+						<p>&lt;/div></p>
+					</code></pre>
+				</div>
+			</div>
+			<div class="con-box">
+				<h2 class="page-header">angularjs编写规范</h2>
+				<p>1. 控制器名称跟在路由上（一个页面有一个控制器即可，有特殊需要，如主页面下有子页面，主页面上可以有一个控制器，子页面有一个，主页面的控制器获取子页面所需参数后，子页面中控制器不需要在获取）</p>
+				<p>2. 一些事件和请求封装成方法写到对应的js中然后在对应控制器下调用。（绑定事件可以用ng-click，如用jquery来绑定事件则需要先.off来解除后在用.on来绑定）</p>
+				<p>3. 需要使用的$服务需要先进入注入，当前控制器中不需要的则不用注入</p>
+				<p>4. 一个页面下有多个请求，请求得到的数据在给$scope赋值的时候$scope.名称，这个名称不能有重复的，根据获得数据来命名，然后在页面中使用这个名称.来取数据，不必赋值一堆$scope</p>
+				<p>5. ui-router上传参数注意不能写重复的，坑很深</p>
+				<p>6. 将控制器命名为[Name]Controller而不是[Name]Ctrl是一个最佳实践</p>
+			</div>
+		</div>
+	</div>

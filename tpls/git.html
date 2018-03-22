@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>git配置</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="navbar-header navbar-brand">远景同程</div>
+			<nav class="pull-right">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">开发规范</a></li>
+					<li><a href="plugins.html">js组件</a></li>
+					<li class="active"><a href="git.html">git配置</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="top-banner">
+		<div class="container">
+			<h1>git配置</h1>
+			<p>Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="con-box">
+				<h2 class="page-header">git安装</h2>
+				<p>下载好安装包后一路next...</p>
+			</div>
+			<div class="con-box">
+				<h2 class="page-header">git可视化管理工具Tortoisegit</h2>
+				<p>下载好对应版本的安装包后一路next...</p>
+			</div>
+			<div class="con-box">
+				<h2 class="page-header">克隆http方式记住帐号密码</h2>
+				<p>$ git config --global user.name "wangliang" </p>
+				<p>$ git config --global user.email wangliang@51Yjtc.com</p>
+				<p>用来注册用户和邮箱 这会在C:\Users\Administrator下多出一个.gitconfig</p> 
+				<p style="line-height:30px;">在home文件夹，一般是 C:\Documents and Settings\Administrator 下建立文件 .git-credentials <br/>（windows下不允许直接创建以.开头的文件，所以有一个小技巧：先创建一个文件名叫 ）git-credentials 然后进入 git bash 使用命令：<br/>
+				 mv git-credentials .git-credentials<br/>
+				用记事本打开这文件输入：<br/>
+				 https://{username}:{password}@github.com<br/>
+				比如：<br/>
+				 http://wangliang:123456@gitlab.51yjtc.com<br/>
+				保存<br/>
+				 添加config项<br/>
+				在任意文件夹下右键进入 git bash<br/>
+				然后输入：<br/>
+				 git config --global credential.helper store<br/>
+
+				执行完后去查看 C:\Documents and Settings\Administrator\.gitconfig 这个文件，发现多了一项：<br/>
+				 [credential]<br/>
+					helper = store<br/>
+				就成功了。<br/>
+				 然后要重开 git bash 窗口，再提交就不用输入用户名密码</p>
+			</div>
+			<div class="con-box">
+				<h2 class="page-header">克隆ssh方式记住帐号密码</h2>
+				<p>等待git和Tortoisegit都安装完成后，按照以下步骤走</p>
+				<p>1、打开TortoiseGit下的PuttyGen，在打开的窗口中点击Generate按钮，会出现绿色的进度条，等待生成，生成的过程中你需要将鼠标放在绿色进度条上晃动，以便进度条前进</p>
+				<p>2、生成之后复制当前生成的key，窗口不要关闭</p> 
+				<p>3、登录你的githup，点击右上方的小人物图标(Profile settings),进去设置页面之后，选择左侧选项中的SSH Keys,点击Add SSH Key按钮，把你刚才复制的key粘贴到key文本框中，然后点击Add key按钮即可</p>
+				<p>4、返回到生成key的窗口，点击Save private key按钮保存为适用于TortoiseGit的私钥扩展名为.ppk,保存到哪个磁盘下都可以</p>
+				<p>5、打开TortoiseGit下的settings，找到git下的Remote，将Putty的路径设置成你保存私钥扩展名.ppk保存的路径即可</p>
+				<p>5、需要在你的本地磁盘(我的在E盘)中建立一个文件夹，以便需要克隆的文件克隆到当前文件夹内(我的是文件夹名称是：git)</p>
+			</div>
+			<div class="con-box">
+				<h2 class="page-header">git常用命令</h2>
+				<p>添加修改：git add -u</p>
+				<p>提交注释修改：git commit -m "修改了css"</p>
+				<p>更新：git pull 或 git pull origin develop</p>
+				<p>提交：git push 或 git push origin develop</p>
+				<p>查看本地分支：git branch</p>
+				<p>查看所有分支：git branch -a</p>
+				<p>切换分支：git checkout develop</p>
+				<p>新建本地分支：git checkout -b newfenzhi</p>
+				<p>合并分支：git merge</p>
+				<p><a href="imgs/git.png"><img width="100%" src="imgs/git.png" alt=""></a></p>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container text-center">
+			<p>远景同程前端开发</p>
+			<p>by web ©2016</p>
+		</div>
+	</footer>
+</body>
+</html>

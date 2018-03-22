@@ -33,3 +33,16 @@ testproject.controller('tubiaoController',['$state','$timeout','$stateParams', '
     }
     testProService.getExamDatas(seclecter,titles,xAxisDate,seriesArr,seriesDateName,seriesDateTime);
 }]);
+testproject.controller('standardController',['$state','$timeout','$stateParams', function($state,$timeout,$stateParams){
+    console.log('测试路由和控制器');
+}]);
+testproject.controller('gitController',['$state','$timeout','$stateParams', function($state,$timeout,$stateParams){
+    console.log('测试路由和控制器');
+}]);
+testproject.controller('pluginsController',['$state','$timeout','$stateParams', function($state,$timeout,$stateParams){
+    console.log('测试路由和控制器');
+    $('.container').monitor('.scroll', {
+       dirWrap: '.anchor',
+       triggerClass: 'cur'
+    });
+}]);

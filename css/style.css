@@ -1,0 +1,97 @@
+.red{color:#c7254e;}
+.alert{border:none;margin:0;padding:0;}
+.container{max-width: 1000px;}
+.header{background:#0e90d2;color:#fff;}
+.nav a{color:#fff;}
+.nav >li >a:hover{background: rgba(0,0,0,0.1);}
+.nav .active{background: #0b76ac;}
+.nav .active >a:hover{background:#0b76ac; }
+.top-banner{padding:20px 0 40px 0;background:#f5f5f5 url(../imgs/index.png);}
+.code-box pre{line-height: 1;}
+.code-box code{line-height: 0;}
+.code-box code p{margin:0;color:#4f9fcf;;}
+.code-box code p.title{color:#666;}
+.na{color:#4f9fcf;}
+.s{color:#d44950;}
+.footer{padding:20px 0;margin-top:50px;background: #666;color:#fff;}
+.anchor{position: fixed;left:0;top:50%;width:150px;max-height:500px;margin-top:-160px;overflow:auto;background: #eee;}
+.anchor a{color:#333;}
+.anchor li.cur a{background: #0e90d2 ;color:#fff;}
+
+/*图层拖拽*/
+.drag-wrapper{position:relative;margin:20px auto;width:500px;height:500px;border:1px solid #ddd;}
+.drag-box{position:absolute;top:0;left:0;z-index:10;width:250px;height:150px;color:#333;font-size:12px;border:1px solid #ccc;border-radius:5px;box-shadow:1px 2px 2px 1px rgba(0, 0, 0, 0.1);background-color:#fff;}
+.drag-box-hd{height:30px;line-height:30px;text-indent:1em;border-bottom:1px solid #ddd;cursor:move;}
+
+/*弹出层*/
+.popup{position:fixed;width:500px;height:180px;background: #fff;left:0;top:0;display: none;z-index:999;}
+
+/*分页*/
+.page{margin:20px 0;text-align: center;}
+.page input{width: 46px;line-height: 20px;margin: 0 6px;}
+.page span.span2{margin-left:10px;}
+.page a{display:inline-block;height:26px;line-height: 25px;padding:0 10px;margin:0 5px;border:1px #ccc solid;color:#666;cursor:pointer;}
+.page a:hover{background:#00a0ff;border:1px #0099cc solid;color:#fff;text-decoration: none;}
+.page a.on{background:#00a0ff;border:1px #0099cc solid;color:#fff;cursor:default;}
+
+/*模拟系统弹框*/
+.alert{position: fixed;width:480px;background: #fff;border-radius:16px;box-shadow:0 0 8px rgba(0, 0, 0, 0.25);}
+.alert .title{position:relative;height: 40px;line-height: 40px;background: #365280;border-radius:16px 16px 0 0;color:#fff;text-align: center;font-size: 18px;}
+.alert .title a{position: absolute;right:20px;top:9px;width: 19px;height: 19px;background: url(http://www.yuejuanyi.com/yuejuanyi/imgs/entrance_exam/btn_tc_close.svg) no-repeat;}
+.alert .title a:active{background: url(http://www.yuejuanyi.com/yuejuanyi/imgs/entrance_exam/btn_tc_close_dwn.svg) no-repeat;}
+.alert .con{padding:60px 10px;color:#333;text-align: center;font-size: 18px;}
+.alert .ctrl{height: 40px;line-height: 40px;font-size:20px;}
+.alert .ctrl-alert a{display:block;width:100%;border-radius:0 0 16px 16px;background: #e0e0e0 ;color:#636363;text-align: center;}
+.alert .ctrl-alert a:hover{text-decoration: none;}
+.alert .ctrl-alert a:active{background: #365280;color:#fff;}
+.alert .ctrl-confirm a{float:left;width:240px;border-radius:0 0 16px 16px;background: #e0e0e0 ;color:#636363;text-align: center;}
+.alert .ctrl-confirm a:first-child{width:240px;border-right: 1px solid #365280;border-radius: 0 0 0 16px;}
+.alert .ctrl-confirm a:last-child{border-radius: 0 0 16px;}
+
+/*环形进度条*/
+.circle {
+    width: 100px;
+    margin: 6px 6px 20px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.circle canvas {
+    vertical-align: top;
+}
+
+.circle strong {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+}
+
+.circle strong i {
+    font-style: normal;
+    font-size: 0.6em;
+    font-weight: normal;
+}
+
+.circle span {
+    display: block;
+    color: #aaa;
+    margin-top: 12px;
+}
+
+/*打印*/
+.print-box{padding:20px;}
+.print-box1{background: #fee3a1;}
+.print-box2{background: #80d190;}
+.print-box3{background: #b4a8d9;color:#9e344f;}
+.print-box4{background: #f9b1c7;color:#354768;}
+.print-box5{background: #fee3a1;}
+
+/*滚动监听固定*/
+.fixed-wrap{height: 40px;}
+.fixed-wrap .fixed{height: 40px;line-height: 40px;background: #2e6da4;color:#fff;text-align: center;}

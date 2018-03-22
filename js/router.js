@@ -16,4 +16,19 @@ testproject.config(['$stateProvider','$urlRouterProvider',function($stateProvide
 			templateUrl: 'tpls/tubiao.html',
 			controller: 'tubiaoController'
 		})
+		.state('standard', {
+			url: '/standard',
+			templateUrl: 'tpls/standard.html',
+			controller: 'standardController'
+		})
+		.state('git', {
+			url: '/git',
+			templateUrl: 'tpls/git.html',
+			controller: 'gitController'
+		})
+		.state('plugins', {
+			url: '/plugins',
+			templateUrl: 'tpls/plugins.html',
+			controller: 'pluginsController'
+		})
 }]);

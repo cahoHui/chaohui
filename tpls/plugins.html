@@ -1,0 +1,796 @@
+
+	<div class="top-banner">
+		<div class="container">
+			<h1>js组件</h1>
+			<p>js组件widget.min.js是基于jquery的插件库， 使用简单，通过配置相关参数，能快速开发出界面效果。</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="con-box">
+				<h2 class="page-header">使用方法</h2>
+				<p>1. 在页面中引入jquery和widget.min.js文件</p>
+				<p>2. 按插件要求写好html结构和css样式</p>
+				<p>3. 调用相应插件方法，配置对应参数即可</p>
+			</div>
+			<div class="con-box">
+				<h2 class="page-header">widget插件集合方法说明</h2>
+				<a class="btn btn-primary" href="other.html">其他一些可能用到的组件友链</a>
+			</div>
+			<div class="con-box scroll">
+				<h2 class="page-header">系统弹框</h2>
+				<p class="red">options参数列表--$.alert(options)</p>
+				<table class="table table-bordered table-striped">
+					<colgroup>
+						<col style="width:130px">
+						<col style="width:100px">
+						<col style="width:70px">
+						<col style="width:370px">
+					</colgroup>
+					<thead>
+						<tr class="even">
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>默认值</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b class="name">mode</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">alert</span></td>
+							<td class="t_l">
+								<p>模拟系统弹框采用的展示方式，值为confirm时则有取消和确定两个按钮</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">wrapClass</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">alert</span></td>
+							<td class="t_l">
+								<p>模拟弹框最外层框的class，用来控制样式</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">closeClass</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">alert-close</span></td>
+							<td class="t_l">
+								<p>弹框关闭按钮的class</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">confirmClass</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">alert-confirm</span></td>
+							<td class="t_l">
+								<p>弹框确定按钮的class</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">promptText</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">无</span></td>
+							<td class="t_l">
+								<p>弹框提示的文本内容</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">closeText</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">取消</span></td>
+							<td class="t_l">
+								<p>取消的文本</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">confirmText</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">确定</span></td>
+							<td class="t_l">
+								<p>确定的文本</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">maskClick</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">false</span></td>
+							<td class="t_l">
+								<p>点击遮罩是否取消</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">operate</b></td>
+							<td><span class="type">function</span></td>
+							<td><span class="normal">无</span></td>
+							<td class="t_l">
+								<p>点击确定按钮触发的回调函数</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="red">用法</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">调用方法</p>
+						<p>$.alert({</p>
+						<p>　　promptText: '已到最后一道题目'</p>
+						<p>});</p>
+						<p>$.alert({</p>
+						<p>　　mode: 'confirm',</p>
+						<p>　　promptText: '确定重新开始吗？',</p>
+						<p>　　operate: function(){</p>
+						<p>　　　　alert('执行确定后的事件');</p>
+						<p>　　}</p>
+						<p>});</p>
+						<p class="title">示例</p>
+						<p><a href="demos/alert.html" class="btn btn-primary" target="_blank">系统弹框效果</a></p>
+					</code></pre>
+				</div>
+			</div>
+			<div class="con-box scroll">
+				<h2 class="page-header">图层拖拽</h2>
+				<p class="red">options参数列表--$('.drag-box').drag(options)</p>
+				<table class="table table-bordered table-striped">
+					<colgroup>
+						<col style="width:130px">
+						<col style="width:100px">
+						<col style="width:70px">
+						<col style="width:370px">
+					</colgroup>
+					<thead>
+						<tr class="even">
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>默认值</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b class="name">parent</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">true</span></td>
+							<td class="t_l">
+								<p>是否可以点击当前层任意位置进行拖动</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">operate</b></td>
+							<td><span class="type">function</span></td>
+							<td><span class="normal">无</span></td>
+							<td class="t_l">
+								<p>拖动层后, 鼠标放开的时候执行的函数, 此函数可以返回一个含有top和left属性值的对象</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="red">用法</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">html结构</p>
+						<p>&lt;div class="<span class="s">drag-box drag-box1</span>"></p>
+						<p>　　&lt;div class="<span class="s">drag-box-hd</span>">相对文档&lt;/div></p>
+						<p>&lt;/div></p>
+						<p class="title">调用方法</p>
+						<p>$('.drag-box').drag({</p>
+						<p>　　parent: false,</p>
+						<p>　　operate: function(position){</p>
+						<p>　　　　alert(position.left + position.top);</p>
+						<p>　　}</p>
+						<p>});</p>
+						<p class="title">示例</p>
+						<p><a href="demos/drag.html" class="btn btn-primary" target="_blank">多种拖拽效果</a></p>
+					</code></pre>
+				</div>
+			</div>
+			<div class="con-box scroll">
+				<h2 class="page-header">滚动监听固定框</h2>
+				<p class="red">target参数列表--$('.content').monitorFixed(target)</p>
+				<table class="table table-bordered table-striped">
+					<colgroup>
+						<col style="width:130px">
+						<col style="width:100px">
+						<col style="width:70px">
+						<col style="width:370px">
+					</colgroup>
+					<thead>
+						<tr class="even">
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>默认值</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b class="name">target(必须)</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">无</span></td>
+							<td class="t_l">
+								<p>监听每个内容区的开始位置元素, 标准jquery选择器</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="red">用法</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">html结构</p>
+						<p>&lt;div class="<span class="s">container</span>"></p>
+						<p>　　&lt;div class="<span class="s">fixed-wrap</span>"></p>
+						<p>　　　　&lt;div class="<span class="s">fixed</span>">标题栏&lt;/div></p>
+						<p>　　&lt;/div></p>
+						<p>&lt;/div></p>
+						<p class="title">调用方法</p>
+						<p>$('.container').monitorFixed('.fixed')</p>
+						<p class="title">示例</p>
+						<p><a href="demos/monitor_fixed.html" class="btn btn-primary" target="_blank">滚动监听固定框效果</a></p>
+					</code></pre>
+				</div>
+			</div>
+			<div class="con-box scroll">
+				<h2 class="page-header">滚动监听</h2>
+				<p class="red">options参数列表--$('.content').monitor(target, options)</p>
+				<table class="table table-bordered table-striped">
+					<colgroup>
+						<col style="width:130px">
+						<col style="width:100px">
+						<col style="width:70px">
+						<col style="width:370px">
+					</colgroup>
+					<thead>
+						<tr class="even">
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>默认值</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b class="name">target(必须)</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">无</span></td>
+							<td class="t_l">
+								<p>监听每个内容区的开始位置元素, 标准jquery选择器</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4"><span class="code-kop">options</span>参数</td>
+						</tr>
+						<tr>
+							<td><b class="name">dirWrap</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">.catalog</span></td>
+							<td class="t_l">
+								<p>监听浮动列表项的父容器, 标准jquery选择器</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">listWrap</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">li</span></td>
+							<td class="t_l">
+								<p>监听浮动列表项, 标准jquery选择器</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">triggerClass</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">current</span></td>
+							<td class="t_l">
+								<p>当前点击目录的class名字</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">speed</b></td>
+							<td><span class="type">number</span></td>
+							<td><span class="normal">400ms</span></td>
+							<td class="t_l">
+								<p>滚动到指定位置时的速度</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">disTop</b></td>
+							<td><span class="type">object</span></td>
+							<td><span class="normal">0, 9999</span></td>
+							<td class="t_l">
+								<p>距离顶部多少距离时, 隐藏快速导航目录, 包含两个属性: <br>minTop: 0(默认), maxTop: 9999(默认)</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">topDiff</b></td>
+							<td><span class="type">number</span></td>
+							<td><span class="normal">0</span></td>
+							<td class="t_l">
+								<p>顶部差距, 默认为0. 当浏览器顶部有跟随的浮动层时, 请指定此项的值。</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">opacity</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">false</span></td>
+							<td class="t_l">
+								<p>快速导航目录显示时, 是否具有透明度效果</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">animate</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">true</span></td>
+							<td class="t_l">
+								<p>滚动到指定位置时, 是否具有动画效果</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="red">用法</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">html结构</p>
+						<p>&lt;div class="<span class="s">container</span>"></p>
+						<p>　　&lt;h2">&lt;/h2></p>
+						<p>&lt;/div></p>
+						<p>&lt;ul class="<span class="s">anchor</span>"></p>
+						<p>　　&lt;li><a href="javascript:;"></a>&lt;/li></p>
+						<p>&lt;/ul></p>
+						<p class="title">调用方法</p>
+						<p>$('.container').monitor('h2', {</p>
+						<p>　　dirWrap: '.anchor',</p>
+						<p>　　triggerClass: 'cur'</p>
+						<p>});</p>
+						<p class="title">示例</p>
+						<p><a href="demos/monitor.html" class="btn btn-primary" target="_blank">滚动监听效果</a></p>
+					</code></pre>
+				</div>
+			</div>
+			<div class="con-box scroll">
+				<h2 class="page-header">弹出层</h2>
+				<p class="red">options参数列表--$('.modal').modal(options)</p>
+				<table class="table table-bordered table-striped">
+					<colgroup>
+						<col style="width:130px">
+						<col style="width:100px">
+						<col style="width:70px">
+						<col style="width:370px">
+					</colgroup>
+					<thead>
+						<tr class="even">
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>默认值</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b class="name">fixed</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">true</span></td>
+							<td class="t_l">
+								<p>是否固定弹出层</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">drag</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">true</span></td>
+							<td class="t_l">
+								<p>是否可拖拽</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">animate</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">false</span></td>
+							<td class="t_l">
+								<p>是否支持动画</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">zIndex</b></td>
+							<td><span class="type">number</span></td>
+							<td><span class="normal">998</span></td>
+							<td class="t_l">
+								<p>弹出层的z-index值</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">close</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">.modal-close</span></td>
+							<td class="t_l">
+								<p>弹出层关闭按钮的class或者id, jquery选择器</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">confirm</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">.modal-confirm</span></td>
+							<td class="t_l">
+								<p>弹出层确认按钮的class或者id, jquery选择器</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">confirm</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">.modal-enter</span></td>
+							<td class="t_l">
+								<p>弹出层确认按钮的class或者id, jquery选择器, 按回车键时会自动触发</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">maskClick</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">false</span></td>
+							<td class="t_l">
+								<p>点击遮罩是否取消</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">operate</b></td>
+							<td><span class="type">function</span></td>
+							<td><span class="normal">无</span></td>
+							<td class="t_l">
+								<p>点击确定按钮触发的回调函数</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="red">用法</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">调用方法</p>
+						<p>$('.popup').modal({</p>
+						<p>　　fixed: false</p>
+						<p>});</p>
+						<p class="title">示例</p>
+						<p><a href="demos/modal.html" class="btn btn-primary" target="_blank">弹出层效果</a></p>
+					</code></pre>
+				</div>
+			</div>
+			<div class="con-box scroll">
+				<h2 class="page-header">分页</h2>
+				<p class="red">options参数列表--$('.page').pageFlie(options)</p>
+				<table class="table table-bordered table-striped">
+					<colgroup>
+						<col style="width:130px">
+						<col style="width:100px">
+						<col style="width:70px">
+						<col style="width:370px">
+					</colgroup>
+					<thead>
+						<tr class="even">
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>默认值</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b class="name">page</b></td>
+							<td><span class="type">number</span></td>
+							<td><span class="normal">无</span></td>
+							<td class="t_l">
+								<p>当前页码</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">count</b></td>
+							<td><span class="type">number</span></td>
+							<td><span class="normal">无</span></td>
+							<td class="t_l">
+								<p>总页码数</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">operate</b></td>
+							<td><span class="type">function</span></td>
+							<td><span class="normal">无</span></td>
+							<td class="t_l">
+								<p>点击切换页码时触发的回调函数</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="red">用法</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">html结构</p>
+						<p>&lt;div class="<span class="s">page</span>" id="<span class="s">pageFlie</span>">&lt;/div></p>
+						<p class="title">调用方法</p>
+						<p>$('#pageFlie').pageFlie({</p>
+						<p>　　page: page,</p>
+						<p>　　count: count,</p>
+						<p>　　operate: function(page){</p>
+						<p>　　　　alert('执行回调');</p>
+						<p>　　}</p>
+						<p>});</p>
+						<p class="title">示例</p>
+						<p>由于分页是为angular准备的，所以在预览效果前需要以（前端开发必读文件夹）为根目录启动一个http-server</p>
+						<p><a href="http://127.0.0.1:8080/angular.html#/page?page=1" class="btn btn-primary" target="_blank">分页</a></p>
+					</code></pre>
+				</div>
+			</div>
+			<div class="con-box scroll">
+				<h2 class="page-header">圆形进度条动画</h2>
+				<p class="red">options参数列表--$('.circle').circleProgress(options)</p>
+				<table class="table table-bordered table-striped">
+					<colgroup>
+						<col style="width:130px">
+						<col style="width:100px">
+						<col style="width:70px">
+						<col style="width:370px">
+					</colgroup>
+					<thead>
+						<tr class="even">
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>默认值</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b class="name">value</b></td>
+							<td><span class="type">number</span></td>
+							<td><span class="normal">0</span></td>
+							<td class="t_l">
+								<p>这是唯一一个必填参数。值从0.0到1.0</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">size</b></td>
+							<td><span class="type">number</span></td>
+							<td><span class="normal">100</span></td>
+							<td class="t_l">
+								<p>canvas的大小，单位像素</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">startAngle</b></td>
+							<td><span class="type"></span></td>
+							<td><span class="normal">Math.PI</span></td>
+							<td class="t_l">
+								<p>初始角度</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">reverse</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">false</span></td>
+							<td class="t_l">
+								<p>是否反向绘制圆弧和动画</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">thickness</b></td>
+							<td><span class="type"></span></td>
+							<td><span class="normal">auto</span></td>
+							<td class="t_l">
+								<p>进度条圆弧的宽度。默认它自动为size的1/14大小，你可以设置你需要的值。</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">lineCap</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">butt</span></td>
+							<td class="t_l">
+								<p>圆弧的线头样式："butt"、"round"和"square"。</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">fill</b></td>
+							<td><span class="type">object</span></td>
+							<td><span class="normal">{ gradient: ["#3aeabb", "#fdd250"] }</span></td>
+							<td class="t_l">
+								<p>圆弧填充的配置。<br/>
+								-{ color: "#ff1e41" }<br/>
+								-{ color: 'rgba(255, 255, 255, .3)' }<br/>
+								-{ gradient: ["red", "green", "blue"] }<br/>
+								-{ gradient: [["red", .2], ["green", .3], ["blue", .8]] }<br/>
+								-{ gradient: [ ... ], gradientAngle: Math.PI / 4 }<br/>
+								-{ gradient: [ ... ], gradientDirection: [x0, y0, x1, y1] }<br/>
+								-{ image: "http://i.imgur.com/pT0i89v.png" }<br/>
+								-{ image: imageInstance }<br/>
+								-{ color: "lime", image: "http://i.imgur.com/pT0i89v.png" }
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">emptyFill</b></td>
+							<td><span class="type">string</span></td>
+							<td><span class="normal">rgba(0, 0, 0, .1)</span></td>
+							<td class="t_l">
+								<p>空圆弧的颜色。</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">animation</b></td>
+							<td><span class="type"></span></td>
+							<td><span class="normal">{ duration: 1200, easing: "circleProgressEase" }</span></td>
+							<td class="t_l">
+								<p>动画配置。可以参考jQuery animations。你可以设置为false来禁止动画。"circleProgressEase"是一个ease-in-out-cubic easing动画效果</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">animationStartValue</b></td>
+							<td><span class="type">number</span></td>
+							<td><span class="normal">0.0</span></td>
+							<td class="t_l">
+								<p>默认进度条动画会在0.0开始，结束与value处。调用该参数可以直接动画。如果需要制作反向动画就将animationStartValue的值设置为1.0。你可以指定0.0到1.0之间的任何数值。</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table table-bordered table-striped">
+					<colgroup>
+						<col style="width:230px">
+						<col style="width:440px">
+					</colgroup>
+					<thead>
+						<tr class="even">
+							<th>事件</th>
+							<th>处理程序</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b class="name">circle-animation-start：</b></td>
+							<td><span class="type">function(event)-event - jQuery事件</span></td>
+						</tr>
+						<tr>
+							<td><b class="name">circle-animation-progress</b></td>
+							<td><span class="type">function(event, animationProgress, stepValue)：<br/>
+								-event - jQuery事件<br/>
+								animationProgress - 从0.0到1.0<br/>
+								stepValue - 当前的步长值，从0.0到value</span>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">circle-animation-end</b></td>
+							<td><span class="type">function(event)：-event - jQuery事件</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="red">其他</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">如果进度条组件已经被初始化，你可以获取&lt;canvas>：</p>
+						<p>$('#circle').circleProgress({ value: 0.5 });</p>
+						<p>var canvas = $('#circle').circleProgress('widget'); </p>
+						<p class="title">你可以获取CircleProgress对象实例：</p>
+						<p>var instance = $('#circle').data('circle-progress'); </p>
+						<p class="title">如果进度条组件已经被初始化，你可以重新绘制已经存在的圆环：</p>
+						<p>$('#circle').circleProgress({ value: 0.5, fill: { color: 'orange' }});</p>
+						<p>$('#circle').circleProgress('redraw');</p>
+						<p>$('#circle').circleProgress();</p>
+						<p>$('#circle').circleProgress({ size: 150 });</p>
+						<p class="title">你可以改变默认的参数配置：</p>
+						<p>$.circleProgress.defaults.size = 50; </p>
+					</code></pre>
+				</div>
+				
+				<p class="red">用法</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">html结构</p>
+						<p>&lt;div id="<span class="s">circle</span>">&lt;/div></p>
+						<p class="title">调用方法</p>
+						<p>$('#circle').circleProgress({</p>
+						<p>　　value: 0.75,</p>
+						<p>　　size: 80,</p>
+						<p>　　fill: {</p>
+						<p>　　　　gradient: ["red", "orange"]</p>
+						<p>　　}</p>
+						<p>});</p>
+						<p class="title">示例</p>
+						<p><a href="demos/circle_progress.html" class="btn btn-primary" target="_blank">圆形进度条动画</a></p>
+					</code></pre>
+				</div>
+			</div>
+			<div class="con-box scroll">
+				<h2 class="page-header">网页内容打印</h2>
+				<p class="red">options参数列表--$('.btn').print(options)</p>
+				<table class="table table-bordered table-striped">
+					<colgroup>
+						<col style="width:130px">
+						<col style="width:100px">
+						<col style="width:70px">
+						<col style="width:370px">
+					</colgroup>
+					<thead>
+						<tr class="even">
+							<th>参数</th>
+							<th>数据类型</th>
+							<th>默认值</th>
+							<th>参数说明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><b class="name">globalStyles</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">true</span></td>
+							<td class="t_l">
+								<p>是否包含父文档的样式</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">mediaPrint</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">false</span></td>
+							<td class="t_l">
+								<p>是否包含media='print'的链接标签。会被globalStyles选项覆盖</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">stylesheet</b></td>
+							<td><span class="type">URL-string</span></td>
+							<td><span class="normal">null</span></td>
+							<td class="t_l">
+								<p>外部样式表的URL地址</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">noPrintSelector</b></td>
+							<td><span class="type">任何可用的jQuery选择器</span></td>
+							<td><span class="normal">".no-print"</span></td>
+							<td class="t_l">
+								<p>不想打印的元素的jQuery选择器</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">iframe</b></td>
+							<td><span class="type">任何可用的jQuery选择器或Boolean</span></td>
+							<td><span class="normal">默认true，如果没有iframe选择器被传入会创建一个隐藏的iframe</span></td>
+							<td class="t_l">
+								<p>是否使用一个iframe来替代打印表单的弹出窗口</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">append/prepend</b></td>
+							<td><span class="type">boolean</span></td>
+							<td><span class="normal">null</span></td>
+							<td class="t_l">
+								<p>是否将用户更新的表单输入框内容作为打印内容（通过迭代每一个表单元素来实现）</p>
+							</td>
+						</tr>
+						<tr>
+							<td><b class="name">deferred</b></td>
+							<td><span class="type">任何可用的jQuery.Deferred对象</span></td>
+							<td><span class="normal">$.Deferred()</span></td>
+							<td class="t_l">
+								<p>当打印函数被调用时的jQuery.Deferred对象</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="red">用法</p>
+				<div class="code-box">
+					<pre><code>
+						<p class="title">调用方法</p>
+						<p>$(".btn").print({</p>
+						<p>　　globalStyles: true</p>
+						<p>});</p>
+						<p class="title">示例</p>
+						<p><a href="demos/print.html" class="btn btn-primary" target="_blank">网页内容打印效果</a></p>
+					</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<ul class="anchor nav">
+		<li><a href="javascript:;">系统弹框</a></li>
+		<li><a href="javascript:;">图层拖拽</a></li>
+		<li><a href="javascript:;">滚动监听固定框</a></li>
+		<li><a href="javascript:;">滚动监听</a></li>
+		<li><a href="javascript:;">弹出层</a></li>
+		<li><a href="javascript:;">分页</a></li>
+		<li><a href="javascript:;">圆形进度条动画</a></li>
+		<li><a href="javascript:;">网页内容打印</a></li>
+	</ul>
