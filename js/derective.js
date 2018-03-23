@@ -7,7 +7,7 @@ testproject.directive('waterfallDirective', ['$timeout', '$state', function($tim
 		link: function(scope, ele, attrs){
 			console.log(scope);
 			// imglocation('container' ,'box');
-			if($state.include('waterfall')){
+			if($state.includes('waterfall')){
 				$timeout(function(){
 					var len = $('#container img').length;
 					$('#container img').each(function(i, k){
