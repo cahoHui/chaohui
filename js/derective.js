@@ -6,22 +6,17 @@ testproject.directive('waterfallDirective', ['$timeout', function($timeout){
 	return {
 		link: function(scope, ele, attrs){
 			console.log(scope);
-			$timeout(function(){
-				var len = $('#container img').length;
-				$('#container img').each(function(i, k){
-					// if(i == len-1){console.log(k);
+			// imglocation('container' ,'box');
+			if($state.include('waterfall')){
+				$timeout(function(){
+					var len = $('#container img').length;
+					$('#container img').each(function(i, k){
 						console.log('chengge')
 						$(k).load(function(){
 							imglocation('container' ,'box');
 						})
-						
-					// }
-				})
-				
-				
-			},100);
-			// imglocation('container' ,'box');
-			if($state.include('waterfall')){
+					})
+				},100);
 				var imgData = {'data': [{'src':'2.jpg'},{'src':'1.jpg'},{'src':'3.jpg'},{'src':'5.jpg'},{'src':'4.jpg'}]};
 			    window.onscroll = function(){
 			        if(checkFlag()){
