@@ -1,8 +1,9 @@
 /**/
-.header{height:72px;background:#0dbbb1;color:#fff;}
+.header{height:72px;background:#0e90d2;color:#fff;}
 .header .logo{width:200px;height:72px;font-size:30px;text-align: center;line-height:72px;}
 .header .S{float:left;padding:0 20px;height:72px;line-height:72px;color:#fff;}
-.header .S:hover{background:#fff;color:#0dbbb1;}
+.header .S:hover{background:#fff;color:#0e90d2;text-decoration: none;}
+.header .S.on{background:#fff;color:#0e90d2;text-decoration: none;}
 /*瀑布流*/
 #container .box-img{padding:10px;border:1px solid #ccc;box-shadow: 0 0 6px #ccc;border-radius: 5px;}
 #container .box{float:left;padding:15px 0 0 15px;}

@@ -26,13 +26,13 @@
 		<div class="w1020">
 			<div class="fl logo">L O G O</div>
 			<div class="fl">
-				<a ui-sref="tubiao" class="S">图表</a>
-				<a ui-sref="standard" class="S">规范</a>
-				<a ui-sref="plugins" class="S">组件</a>
-				<a ui-sref="git" class="S">git配置</a>
+				<a ui-sref="tubiao" class="S" ng-class="{on: $state.includes('tubiao')}">图表</a>
+				<a ui-sref="standard" class="S" ng-class="{on: $state.includes('standard')}">规范</a>
+				<a ui-sref="plugins" class="S" ng-class="{on: $state.includes('plugins')}">组件</a>
+				<a ui-sref="git" class="S" ng-class="{on: $state.includes('git')}">git配置</a>
 				<a class="S">版本5</a>
 				<a class="S">版本6</a>
-				<a ui-sref="waterfall" class="S">瀑布流</a>
+				<a ui-sref="waterfall" class="S" ng-class="{on: $state.includes('waterfall')}">瀑布流</a>
 			</div>
 		</div>
 	</div>
