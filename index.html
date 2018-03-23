@@ -12,9 +12,8 @@
 	<script src="js/widget.min.js"></script>
 	<script src="framework/angular.min.js"></script>
 	<script src="framework/angular-ui-router.min.js"></script>
-	<!-- <script src="framework/hcharts4.3/js/highcharts.js"></script> -->
 	<script src="framework/highcharts.js"></script>
-	<script src="framework/jquery.lazyload.min.js"></script>
+	<script src="js/plugins/circle-progress/circle-progress.js"></script>
 	<script src="app.js"></script>
 	<script src="js/router.js"></script>
 	<script src="js/controller.js"></script>
@@ -31,7 +30,7 @@
 				<a ui-sref="standard" class="S" ng-class="{on: $state.includes('standard')}">规范</a>
 				<a ui-sref="plugins" class="S" ng-class="{on: $state.includes('plugins')}">组件</a>
 				<a ui-sref="git" class="S" ng-class="{on: $state.includes('git')}">git配置</a>
-				<a class="S">版本5</a>
+				<a ui-sref="monitor" class="S" ng-class="{on: $state.includes('monitor')}">滚动监听</a>
 				<a class="S">版本6</a>
 				<a ui-sref="waterfall" class="S" ng-class="{on: $state.includes('waterfall')}">瀑布流</a>
 			</div>

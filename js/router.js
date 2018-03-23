@@ -31,4 +31,9 @@ testproject.config(['$stateProvider','$urlRouterProvider',function($stateProvide
 			templateUrl: 'tpls/plugins.html',
 			controller: 'pluginsController'
 		})
+		.state('monitor', {
+			url: '/monitor',
+			templateUrl: 'tpls/monitor.html',
+			controller: 'monitorController'
+		})
 }]);
