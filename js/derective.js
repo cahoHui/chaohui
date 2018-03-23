@@ -2,7 +2,7 @@
 *	data: 2017/08/22
 *	autoer: zhangchaohui
 */
-testproject.directive('waterfallDirective', ['$timeout', function($timeout){
+testproject.directive('waterfallDirective', ['$timeout', '$state', function($timeout, $state){
 	return {
 		link: function(scope, ele, attrs){
 			console.log(scope);
