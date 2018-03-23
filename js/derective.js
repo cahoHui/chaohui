@@ -9,8 +9,11 @@ testproject.directive('waterfallDirective', ['$timeout', function($timeout){
 			$timeout(function(){
 				var len = $('#container img').length;
 				$('#container img').each(function(i, k){
-					if(i == len-1){console.log(i)
-						imglocation('container' ,'box');
+					if(i == len-1){console.log(k);
+						$(k).load(function(){
+							imglocation('container' ,'box');
+						})
+						
 					}
 				})
 				
