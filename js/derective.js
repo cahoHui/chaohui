@@ -7,11 +7,11 @@ testproject.directive('waterfallDirective', ['$timeout', function($timeout){
 		link: function(scope, ele, attrs){
 			console.log(scope);
 			$timeout(function(){
-				// $('img:last').load(function(){
+				// $('.container img:last').onload(function(){
 					imglocation('container' ,'box');
 				// })
 				
-			},100);
+			},1000);
 			// imglocation('container' ,'box');
 		    var imgData = {'data': [{'src':'2.jpg'},{'src':'1.jpg'},{'src':'3.jpg'},{'src':'5.jpg'},{'src':'4.jpg'}]};
 		    window.onscroll = function(){
