@@ -29,7 +29,7 @@ testproject.directive('waterfallDirective', ['$timeout', '$state', function($tim
 			                boximg.className = 'box-img';
 			                ccontent.appendChild(boximg);
 			                var img = document.createElement('img');
-			                img.src = '../imgs/'+ imgData.data[i].src;
+			                img.src = 'imgs/'+ imgData.data[i].src;
 			                boximg.appendChild(img);
 			            }
 			            imglocation('container' ,'box');
