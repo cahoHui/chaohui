@@ -4,6 +4,7 @@
 
 */
 testproject.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider){
+	$urlRouterProvider.otherwise('standard')
 	$stateProvider
 		//js瀑布流
 		.state('waterfall', {
